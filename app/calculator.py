@@ -2,12 +2,13 @@ import networkx as nx
 from asteval import Interpreter
 import re
 
-def build_dependency_graph(rows: list[dict]) -> list[dict]:
+
+def build_dependency_graph(rows: list[dict], edges: list[tuple[str, str]]) -> list[dict]:
     """
     Topological sort using networkx.
-    Same logic as Kahn's algorithm we did in C#.
-    Type = 1 → driver (no formula, no dependencies)
-    Type = 2 → calculated (has formula, depends on other metrics)
+    `edges` are (depends_on_code, metric_code) pairs already validated and
+    persisted by MetricRepository (C#) at formula-save-time — no more
+    regex-deriving them here on every calculation.
     """
     graph = nx.DiGraph()
 
@@ -15,13 +16,13 @@ def build_dependency_graph(rows: list[dict]) -> list[dict]:
     for row in rows:
         graph.add_node(row["MetricCode"])
 
-    # Add edges based on formula dependencies
-    for row in rows:
-        if row["Type"] == 2 and row["Formula"]:
-            dependencies = extract_metric_codes(row["Formula"], rows)
-            for dep in dependencies:
-                # dep must be calculated before current row
-                graph.add_edge(dep, row["MetricCode"])
+    # Only wire edges where both ends are metrics actually present in this
+    # row set (e.g. filtered by product/project) — an edge pointing outside
+    # it isn't a cycle, just not relevant here.
+    codes = {row["MetricCode"] for row in rows}
+    for depends_on_code, metric_code in edges:
+        if depends_on_code in codes and metric_code in codes:
+            graph.add_edge(depends_on_code, metric_code)
 
     # Topological sort
     try:
@@ -39,31 +40,19 @@ def build_dependency_graph(rows: list[dict]) -> list[dict]:
     return sorted_rows
 
 
-def extract_metric_codes(formula: str, rows: list[dict]) -> list[str]:
-    """
-    Extract which tokens in the formula are MetricCodes (not numbers/operators).
-    """
-    all_metric_codes = {row["MetricCode"] for row in rows}
-
-    # Tokenize formula - split by operators and spaces
-    tokens = re.findall(r'[A-Za-z_][A-Za-z0-9_]*|[\d.]+', formula)
-
-    dependencies = []
-    for token in tokens:
-        if token in all_metric_codes:
-            dependencies.append(token)
-
-    return dependencies
-
-
-def resolve_formula(formula: str, metric_values: dict[str, float]) -> float:
+def resolve_formula(formula: str, metric_values: dict[str, float]) -> tuple[float, str | None]:
     """
     Replace MetricCode tokens with their values and evaluate safely.
-    
+
     Example:
         formula = "REVENUE - COST_OF_SALES"
         metric_values = { "REVENUE": 5000000, "COST_OF_SALES": 3200000 }
-        result = 1800000
+        result = (1800000, None)
+
+    Returns (value, warning). `warning` is set instead of raising when the
+    formula itself is valid but the arithmetic can't be done as written
+    (division/modulo by zero, overflow) — callers should record it and use
+    the fallback value rather than treat it as a broken formula.
     """
     # Tokenize
     tokens = re.findall(r'[A-Za-z_][A-Za-z0-9_]*|[\d.]+|[+\-*/()%]', formula)
@@ -92,9 +81,15 @@ def resolve_formula(formula: str, metric_values: dict[str, float]) -> float:
     result = aeval(resolved_expression)
 
     if aeval.error:
-        raise ValueError(f"Formula evaluation error: {aeval.error_msg}")
+        # Every token above was already validated as a known metric or a
+        # numeric/operator literal, so resolved_expression is pure arithmetic
+        # on floats. The only way aeval can fail from here is an arithmetic
+        # problem (division/modulo by zero, overflow) — that's a data
+        # condition (e.g. a zero denominator), not a broken formula, so
+        # default to 0 instead of aborting the calculation.
+        return 0.0, f"Arithmetic error in '{formula}' ({aeval.error_msg}) — defaulted to 0"
 
-    return float(result)
+    return float(result), None
 
 
 def is_number(token: str) -> bool:
@@ -106,23 +101,42 @@ def is_number(token: str) -> bool:
         return False
 
 
-def calculate_all(rows: list[dict]) -> list[dict]:
+def calculate_all(rows: list[dict], dependency_edges: list[tuple[str, str]]) -> tuple[list, list, list]:
     """
-    Calculate per TimeId (1-12) independently.
+    Calculate per TimeId (1-12).
+
+    The dependency structure (which metric depends on which) is the same for
+    every period — only the values differ — so the topological order is
+    built ONCE from `dependency_edges` and reused for every period, instead
+    of rebuilding it per period.
+
+    A cell that fails to calculate (missing driver value, etc.) no longer
+    aborts the whole request: it's defaulted to 0, recorded in `errors`, and
+    the rest of the calculation continues.
+
+    Returns (updates, total_updates, issues) where issues is a list of
+    {time_id, metric_id, metric_code, message, level} — level is "warning"
+    for an auto-handled arithmetic default (e.g. divide-by-zero), "error"
+    for anything else that had to be defaulted.
     """
     from collections import defaultdict
-    
+
     # Group rows by TimeId
     periods = defaultdict(list)
     for row in rows:
         periods[row["TimeId"]].append(row)
 
+    # Build the topological order once, from whichever period has rows.
+    any_period_rows = next(iter(periods.values()))
+    sorted_codes = [row["MetricCode"] for row in build_dependency_graph(any_period_rows, dependency_edges)]
+
     all_updates = []
     metric_period_results = defaultdict(list)
+    issues = []
 
     for time_id, period_rows in sorted(periods.items()):
-        # Topological sort per period
-        sorted_rows = build_dependency_graph(period_rows)
+        code_to_row = {row["MetricCode"]: row for row in period_rows}
+        sorted_rows = [code_to_row[code] for code in sorted_codes if code in code_to_row]
 
         # Build values map for this period
         metric_values = {}
@@ -139,21 +153,40 @@ def calculate_all(rows: list[dict]) -> list[dict]:
         for row in sorted_rows:
             if row["Type"] == 2 and row["Formula"]:
                 try:
-                    result = resolve_formula(row["Formula"], metric_values)
-                    metric_values[row["MetricCode"]] = result
-                    all_updates.append({
-                        "id": row["Id"],
-                        "amount": result,
-                        "metric_id": row["MetricId"],
-                        "time_behavior": row["TimeBehavior"]
-                    })
-                    metric_period_results[row["MetricId"]].append({
-                        "time_id": time_id,
-                        "amount": result,
-                        "time_behavior": row["TimeBehavior"]
-                    })
+                    result, warning = resolve_formula(row["Formula"], metric_values)
+                    if warning:
+                        issues.append({
+                            "time_id": time_id,
+                            "metric_id": row["MetricId"],
+                            "metric_code": row["MetricCode"],
+                            "message": warning,
+                            "level": "warning"
+                        })
                 except Exception as e:
-                    raise Exception(f"[TimeId={time_id}] Error in '{row['MetricCode']}': {str(e)}")
+                    # Don't abort the rest of the calculation — default this
+                    # cell to 0, flag it, and keep going so everything else
+                    # (this period and the others) still calculates.
+                    result = 0.0
+                    issues.append({
+                        "time_id": time_id,
+                        "metric_id": row["MetricId"],
+                        "metric_code": row["MetricCode"],
+                        "message": f"[TimeId={time_id}] Error in '{row['MetricCode']}': {str(e)}",
+                        "level": "error"
+                    })
+
+                metric_values[row["MetricCode"]] = result
+                all_updates.append({
+                    "id": row["Id"],
+                    "amount": result,
+                    "metric_id": row["MetricId"],
+                    "time_behavior": row["TimeBehavior"]
+                })
+                metric_period_results[row["MetricId"]].append({
+                    "time_id": time_id,
+                    "amount": result,
+                    "time_behavior": row["TimeBehavior"]
+                })
 
     # Calculate TotalAmount per metric
     total_updates = []
@@ -176,4 +209,4 @@ def calculate_all(rows: list[dict]) -> list[dict]:
             "total_amount": total
         })
 
-    return all_updates, total_updates
+    return all_updates, total_updates, issues

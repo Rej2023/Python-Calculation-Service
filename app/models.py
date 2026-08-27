@@ -17,3 +17,5 @@ class CalculationResponse(BaseModel):
     entityId: int
     versionId: int
     yearId: int
+    issueCount: int = 0
+    issues: list[str] = []

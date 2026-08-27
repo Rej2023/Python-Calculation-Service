@@ -153,6 +153,31 @@ def get_sheet_data(conn_str: str, entity_id: int, version_id: int,
         raise Exception(f"Client DB fetch error: {str(e)}")
 
 
+def get_metric_dependency_edges(conn_str: str) -> list[tuple[str, str]]:
+    """
+    Fetch persisted formula-dependency edges as (depends_on_code, metric_code)
+    pairs — the same MetricDependencies table MetricRepository (C#) maintains
+    and cycle-checks at formula-save-time. Replaces the old approach of
+    regex-deriving dependencies here on every calculation.
+    """
+    try:
+        conn = pyodbc.connect(conn_str)
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT dm.Code AS DependsOnCode, m.Code AS MetricCode
+            FROM MetricDependencies md
+            INNER JOIN Metrics m ON md.MetricId = m.Id
+            INNER JOIN Metrics dm ON md.DependsOnMetricId = dm.Id
+        """)
+        edges = [(row[0], row[1]) for row in cursor.fetchall()]
+        conn.close()
+        logger.info(f"Dependency edges fetched: {len(edges)}")
+        return edges
+
+    except Exception as e:
+        raise Exception(f"Client DB dependency fetch error: {str(e)}")
+
+
 def save_calculated_amounts(conn_str: str, updates: list[dict], total_updates: list[dict]):
     """
     Save calculated Amount values back to SheetData.

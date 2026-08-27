@@ -9,7 +9,7 @@ load_dotenv(dotenv_path=BASE_DIR / ".env")
 
 from fastapi import FastAPI, BackgroundTasks, HTTPException, Header
 from app.models import CalculationRequest, CalculationResponse
-from app.database import get_connection_string_from_master, get_sheet_data, save_calculated_amounts, log_calculation
+from app.database import get_connection_string_from_master, get_sheet_data, get_metric_dependency_edges, save_calculated_amounts, log_calculation
 from app.calculator import calculate_all
 from app.callback import send_callback
 
@@ -88,19 +88,33 @@ async def run_calculation(request: CalculationRequest):
             await send_callback(request.callbackUrl, response)
             return
 
+        dependency_edges = get_metric_dependency_edges(conn_str)
+
         logger.info(f"[{request.clientCode}] Calculating {len(rows)} rows...")
-        updates, total_updates  = calculate_all(rows)
+        updates, total_updates, issues = calculate_all(rows, dependency_edges)
 
         logger.info(f"[{request.clientCode}] Saving {len(updates)} calculated rows...")
         save_calculated_amounts(conn_str, updates, total_updates)
 
+        if issues:
+            for issue in issues:
+                logger.warning(f"[{request.clientCode}] [{issue['level']}] {issue['message']}")
+
+        status_message = f'{len(updates)} rows updated'
+        if issues:
+            status_message += f', {len(issues)} issue(s) — see log'
+
         log_calculation(master_conn_str, request.clientCode,
             request.entityId, request.versionId, request.yearId,
-            status='SUCCESS', message=f'{len(updates)} rows updated',
+            status='SUCCESS', message=status_message,
             rows_processed=len(updates), started_at=log_id)
 
+        # Calculation still succeeds even with issues — bad cells are
+        # defaulted and flagged rather than blocking the rest of the sheet.
         response.success = True
         response.message = f"Calculation complete. {len(updates)} rows updated."
+        response.issueCount = len(issues)
+        response.issues = [issue["message"] for issue in issues]
         await send_callback(request.callbackUrl, response)
         logger.info(f"[{request.clientCode}] Done.")
 
