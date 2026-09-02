@@ -59,9 +59,13 @@ def resolve_formula(formula: str, metric_values: dict[str, float]) -> tuple[floa
 
     resolved_tokens = []
     for token in tokens:
-        if token in metric_values:
-            # MetricCode → replace with numeric value
-            value = metric_values[token]
+        token_key = token.upper()
+        if token_key in metric_values:
+            # MetricCode → replace with numeric value. Compared uppercase since
+            # Metrics.Code is always stored uppercase (MetricRepository forces
+            # ToUpperInvariant on save), but formula text may reference it in
+            # any case (e.g. driver codes typed as "d1").
+            value = metric_values[token_key]
             if value is None:
                 raise ValueError(f"Metric '{token}' has no value (None). Cannot calculate.")
             resolved_tokens.append(str(value))
