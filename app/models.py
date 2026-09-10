@@ -6,6 +6,7 @@ class CalculationRequest(BaseModel):
     entityId: int
     versionId: int
     yearId: int
+    timePeriodId: int
     productId: Optional[int] = None
     projectId: Optional[int] = None
     callbackUrl: str

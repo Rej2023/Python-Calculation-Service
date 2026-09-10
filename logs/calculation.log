@@ -199,3 +199,602 @@
 2026-07-17 10:28:03,044 [INFO] [H2V4] Saving 60 calculated rows...
 2026-07-17 10:28:11,154 [INFO] HTTP Request: POST https://plannerfdapi.clariontechnologies.co.in:1024/api/calculation/callback "HTTP/1.1 200 OK"
 2026-07-17 10:28:11,163 [INFO] [H2V4] Done.
+2026-09-01 16:15:53,225 [INFO] [H2V4] Fetching connection string...
+2026-09-01 16:15:55,448 [INFO] [Server=192.168.120.72;Database=PlannerFD_H2V4;User ID=sa;Password=weBMaster#!@2022;TrustServerCertificate=True] Fetching master DB...
+2026-09-01 16:15:55,452 [INFO] [H2V4] Fetching sheet data...
+2026-09-01 16:15:57,317 [INFO] Sheet data fetched: 348 rows
+2026-09-01 16:15:57,763 [INFO] Dependency edges fetched: 35
+2026-09-01 16:15:57,763 [INFO] [H2V4] Calculating 348 rows...
+2026-09-01 16:15:59,242 [INFO] [H2V4] Saving 180 calculated rows...
+2026-09-01 16:16:13,059 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,061 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-01 16:16:13,061 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,061 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,062 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-01 16:16:13,062 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,062 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,062 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-01 16:16:13,062 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,062 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,062 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-01 16:16:13,062 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,062 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,063 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-01 16:16:13,063 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,063 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,063 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-01 16:16:13,063 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,063 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,063 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-01 16:16:13,064 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,066 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,066 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-01 16:16:13,066 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,066 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,066 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-01 16:16:13,067 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,067 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,067 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-01 16:16:13,067 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,067 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,067 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-01 16:16:13,067 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,067 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,067 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-01 16:16:13,067 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,068 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,068 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-01 16:16:13,068 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,068 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,068 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-01 16:16:13,068 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,068 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,068 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-01 16:16:13,068 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,068 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,068 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-01 16:16:13,069 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,069 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,069 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-01 16:16:13,069 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,069 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,069 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-01 16:16:13,070 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,070 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,070 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-01 16:16:13,070 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,070 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,070 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-01 16:16:13,070 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,070 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,070 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-01 16:16:13,070 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,070 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:13,071 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-01 16:16:13,071 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-01 16:16:14,067 [INFO] HTTP Request: POST https://localhost:44368/api/calculation/callback "HTTP/1.1 200 OK"
+2026-09-01 16:16:14,075 [INFO] [H2V4] Done.
+2026-09-02 10:31:29,925 [INFO] [Lj0y] Fetching connection string...
+2026-09-02 10:31:33,717 [INFO] [Server=192.168.120.72;Database=PlannerFD_Lj0y;User ID=sa;Password=weBMaster#!@2022;TrustServerCertificate=True] Fetching master DB...
+2026-09-02 10:31:33,722 [INFO] [Lj0y] Fetching sheet data...
+2026-09-02 10:31:36,234 [INFO] HTTP Request: POST https://localhost:44368/api/calculation/callback "HTTP/1.1 200 OK"
+2026-09-02 10:31:36,246 [ERROR] [Lj0y] Error: Client DB fetch error: ('IM002', '[IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified (0) (SQLDriverConnect)')
+2026-09-02 10:34:14,038 [INFO] [Lj0y] Fetching connection string...
+2026-09-02 10:34:15,270 [INFO] [Server=192.168.120.72;Database=PlannerFD_Lj0y;User ID=sa;Password=weBMaster#!@2022;TrustServerCertificate=True] Fetching master DB...
+2026-09-02 10:34:15,272 [INFO] [Lj0y] Fetching sheet data...
+2026-09-02 10:34:16,734 [INFO] Sheet data fetched: 324 rows
+2026-09-02 10:34:17,020 [INFO] Dependency edges fetched: 0
+2026-09-02 10:34:17,020 [INFO] [Lj0y] Calculating 324 rows...
+2026-09-02 10:34:17,099 [INFO] [Lj0y] Saving 144 calculated rows...
+2026-09-02 10:34:26,050 [WARNING] [Lj0y] [error] [TimeId=1] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 10:34:26,052 [WARNING] [Lj0y] [error] [TimeId=1] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 10:34:26,052 [WARNING] [Lj0y] [error] [TimeId=1] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 10:34:26,052 [WARNING] [Lj0y] [error] [TimeId=1] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 10:34:26,053 [WARNING] [Lj0y] [error] [TimeId=1] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 10:34:26,053 [WARNING] [Lj0y] [error] [TimeId=1] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 10:34:26,053 [WARNING] [Lj0y] [error] [TimeId=1] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 10:34:26,054 [WARNING] [Lj0y] [error] [TimeId=1] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 10:34:26,056 [WARNING] [Lj0y] [error] [TimeId=1] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 10:34:26,056 [WARNING] [Lj0y] [error] [TimeId=1] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 10:34:26,056 [WARNING] [Lj0y] [error] [TimeId=1] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 10:34:26,057 [WARNING] [Lj0y] [error] [TimeId=2] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 10:34:26,057 [WARNING] [Lj0y] [error] [TimeId=2] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 10:34:26,057 [WARNING] [Lj0y] [error] [TimeId=2] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 10:34:26,058 [WARNING] [Lj0y] [error] [TimeId=2] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 10:34:26,058 [WARNING] [Lj0y] [error] [TimeId=2] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 10:34:26,058 [WARNING] [Lj0y] [error] [TimeId=2] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 10:34:26,058 [WARNING] [Lj0y] [error] [TimeId=2] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 10:34:26,059 [WARNING] [Lj0y] [error] [TimeId=2] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 10:34:26,059 [WARNING] [Lj0y] [error] [TimeId=2] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 10:34:26,059 [WARNING] [Lj0y] [error] [TimeId=2] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 10:34:26,059 [WARNING] [Lj0y] [error] [TimeId=2] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 10:34:26,060 [WARNING] [Lj0y] [error] [TimeId=3] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 10:34:26,060 [WARNING] [Lj0y] [error] [TimeId=3] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 10:34:26,060 [WARNING] [Lj0y] [error] [TimeId=3] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 10:34:26,061 [WARNING] [Lj0y] [error] [TimeId=3] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 10:34:26,061 [WARNING] [Lj0y] [error] [TimeId=3] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 10:34:26,061 [WARNING] [Lj0y] [error] [TimeId=3] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 10:34:26,061 [WARNING] [Lj0y] [error] [TimeId=3] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 10:34:26,062 [WARNING] [Lj0y] [error] [TimeId=3] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 10:34:26,062 [WARNING] [Lj0y] [error] [TimeId=3] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 10:34:26,062 [WARNING] [Lj0y] [error] [TimeId=3] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 10:34:26,062 [WARNING] [Lj0y] [error] [TimeId=3] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 10:34:26,063 [WARNING] [Lj0y] [error] [TimeId=4] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 10:34:26,063 [WARNING] [Lj0y] [error] [TimeId=4] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 10:34:26,064 [WARNING] [Lj0y] [error] [TimeId=4] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 10:34:26,064 [WARNING] [Lj0y] [error] [TimeId=4] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 10:34:26,065 [WARNING] [Lj0y] [error] [TimeId=4] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 10:34:26,065 [WARNING] [Lj0y] [error] [TimeId=4] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 10:34:26,065 [WARNING] [Lj0y] [error] [TimeId=4] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 10:34:26,066 [WARNING] [Lj0y] [error] [TimeId=4] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 10:34:26,066 [WARNING] [Lj0y] [error] [TimeId=4] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 10:34:26,066 [WARNING] [Lj0y] [error] [TimeId=4] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 10:34:26,066 [WARNING] [Lj0y] [error] [TimeId=4] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 10:34:26,067 [WARNING] [Lj0y] [error] [TimeId=5] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 10:34:26,067 [WARNING] [Lj0y] [error] [TimeId=5] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 10:34:26,067 [WARNING] [Lj0y] [error] [TimeId=5] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 10:34:26,067 [WARNING] [Lj0y] [error] [TimeId=5] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 10:34:26,067 [WARNING] [Lj0y] [error] [TimeId=5] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 10:34:26,068 [WARNING] [Lj0y] [error] [TimeId=5] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 10:34:26,068 [WARNING] [Lj0y] [error] [TimeId=5] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 10:34:26,068 [WARNING] [Lj0y] [error] [TimeId=5] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 10:34:26,068 [WARNING] [Lj0y] [error] [TimeId=5] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 10:34:26,069 [WARNING] [Lj0y] [error] [TimeId=5] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 10:34:26,069 [WARNING] [Lj0y] [error] [TimeId=5] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 10:34:26,069 [WARNING] [Lj0y] [error] [TimeId=6] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 10:34:26,069 [WARNING] [Lj0y] [error] [TimeId=6] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 10:34:26,069 [WARNING] [Lj0y] [error] [TimeId=6] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 10:34:26,069 [WARNING] [Lj0y] [error] [TimeId=6] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 10:34:26,070 [WARNING] [Lj0y] [error] [TimeId=6] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 10:34:26,070 [WARNING] [Lj0y] [error] [TimeId=6] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 10:34:26,070 [WARNING] [Lj0y] [error] [TimeId=6] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 10:34:26,071 [WARNING] [Lj0y] [error] [TimeId=6] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 10:34:26,071 [WARNING] [Lj0y] [error] [TimeId=6] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 10:34:26,071 [WARNING] [Lj0y] [error] [TimeId=6] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 10:34:26,071 [WARNING] [Lj0y] [error] [TimeId=6] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 10:34:26,072 [WARNING] [Lj0y] [error] [TimeId=7] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 10:34:26,072 [WARNING] [Lj0y] [error] [TimeId=7] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 10:34:26,072 [WARNING] [Lj0y] [error] [TimeId=7] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 10:34:26,073 [WARNING] [Lj0y] [error] [TimeId=7] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 10:34:26,073 [WARNING] [Lj0y] [error] [TimeId=7] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 10:34:26,073 [WARNING] [Lj0y] [error] [TimeId=7] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 10:34:26,073 [WARNING] [Lj0y] [error] [TimeId=7] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 10:34:26,073 [WARNING] [Lj0y] [error] [TimeId=7] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 10:34:26,074 [WARNING] [Lj0y] [error] [TimeId=7] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 10:34:26,074 [WARNING] [Lj0y] [error] [TimeId=7] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 10:34:26,074 [WARNING] [Lj0y] [error] [TimeId=7] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 10:34:26,074 [WARNING] [Lj0y] [error] [TimeId=8] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 10:34:26,074 [WARNING] [Lj0y] [error] [TimeId=8] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 10:34:26,075 [WARNING] [Lj0y] [error] [TimeId=8] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 10:34:26,075 [WARNING] [Lj0y] [error] [TimeId=8] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 10:34:26,075 [WARNING] [Lj0y] [error] [TimeId=8] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 10:34:26,076 [WARNING] [Lj0y] [error] [TimeId=8] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 10:34:26,076 [WARNING] [Lj0y] [error] [TimeId=8] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 10:34:26,076 [WARNING] [Lj0y] [error] [TimeId=8] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 10:34:26,076 [WARNING] [Lj0y] [error] [TimeId=8] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 10:34:26,076 [WARNING] [Lj0y] [error] [TimeId=8] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 10:34:26,077 [WARNING] [Lj0y] [error] [TimeId=8] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 10:34:26,077 [WARNING] [Lj0y] [error] [TimeId=9] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 10:34:26,077 [WARNING] [Lj0y] [error] [TimeId=9] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 10:34:26,077 [WARNING] [Lj0y] [error] [TimeId=9] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 10:34:26,077 [WARNING] [Lj0y] [error] [TimeId=9] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 10:34:26,078 [WARNING] [Lj0y] [error] [TimeId=9] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 10:34:26,078 [WARNING] [Lj0y] [error] [TimeId=9] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 10:34:26,078 [WARNING] [Lj0y] [error] [TimeId=9] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 10:34:26,078 [WARNING] [Lj0y] [error] [TimeId=9] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 10:34:26,079 [WARNING] [Lj0y] [error] [TimeId=9] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 10:34:26,079 [WARNING] [Lj0y] [error] [TimeId=9] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 10:34:26,079 [WARNING] [Lj0y] [error] [TimeId=9] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 10:34:26,079 [WARNING] [Lj0y] [error] [TimeId=10] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 10:34:26,080 [WARNING] [Lj0y] [error] [TimeId=10] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 10:34:26,080 [WARNING] [Lj0y] [error] [TimeId=10] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 10:34:26,080 [WARNING] [Lj0y] [error] [TimeId=10] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 10:34:26,080 [WARNING] [Lj0y] [error] [TimeId=10] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 10:34:26,080 [WARNING] [Lj0y] [error] [TimeId=10] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 10:34:26,081 [WARNING] [Lj0y] [error] [TimeId=10] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 10:34:26,081 [WARNING] [Lj0y] [error] [TimeId=10] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 10:34:26,081 [WARNING] [Lj0y] [error] [TimeId=10] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 10:34:26,082 [WARNING] [Lj0y] [error] [TimeId=10] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 10:34:26,082 [WARNING] [Lj0y] [error] [TimeId=10] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 10:34:26,082 [WARNING] [Lj0y] [error] [TimeId=11] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 10:34:26,082 [WARNING] [Lj0y] [error] [TimeId=11] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 10:34:26,083 [WARNING] [Lj0y] [error] [TimeId=11] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 10:34:26,083 [WARNING] [Lj0y] [error] [TimeId=11] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 10:34:26,083 [WARNING] [Lj0y] [error] [TimeId=11] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 10:34:26,083 [WARNING] [Lj0y] [error] [TimeId=11] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 10:34:26,084 [WARNING] [Lj0y] [error] [TimeId=11] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 10:34:26,084 [WARNING] [Lj0y] [error] [TimeId=11] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 10:34:26,084 [WARNING] [Lj0y] [error] [TimeId=11] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 10:34:26,084 [WARNING] [Lj0y] [error] [TimeId=11] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 10:34:26,084 [WARNING] [Lj0y] [error] [TimeId=11] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 10:34:26,085 [WARNING] [Lj0y] [error] [TimeId=12] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 10:34:26,085 [WARNING] [Lj0y] [error] [TimeId=12] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 10:34:26,085 [WARNING] [Lj0y] [error] [TimeId=12] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 10:34:26,085 [WARNING] [Lj0y] [error] [TimeId=12] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 10:34:26,086 [WARNING] [Lj0y] [error] [TimeId=12] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 10:34:26,086 [WARNING] [Lj0y] [error] [TimeId=12] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 10:34:26,086 [WARNING] [Lj0y] [error] [TimeId=12] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 10:34:26,086 [WARNING] [Lj0y] [error] [TimeId=12] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 10:34:26,086 [WARNING] [Lj0y] [error] [TimeId=12] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 10:34:26,087 [WARNING] [Lj0y] [error] [TimeId=12] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 10:34:26,087 [WARNING] [Lj0y] [error] [TimeId=12] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 10:34:27,082 [INFO] HTTP Request: POST https://localhost:44368/api/calculation/callback "HTTP/1.1 200 OK"
+2026-09-02 10:34:27,094 [INFO] [Lj0y] Done.
+2026-09-02 11:00:32,165 [INFO] [Lj0y] Fetching connection string...
+2026-09-02 11:00:33,830 [INFO] [Server=192.168.120.72;Database=PlannerFD_Lj0y;User ID=sa;Password=weBMaster#!@2022;TrustServerCertificate=True] Fetching master DB...
+2026-09-02 11:00:33,833 [INFO] [Lj0y] Fetching sheet data...
+2026-09-02 11:00:34,977 [INFO] Sheet data fetched: 324 rows
+2026-09-02 11:00:35,500 [INFO] Dependency edges fetched: 0
+2026-09-02 11:00:35,501 [INFO] [Lj0y] Calculating 324 rows...
+2026-09-02 11:00:35,796 [INFO] [Lj0y] Saving 144 calculated rows...
+2026-09-02 11:00:56,468 [WARNING] [Lj0y] [error] [TimeId=1] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 11:00:56,492 [WARNING] [Lj0y] [error] [TimeId=1] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 11:00:56,492 [WARNING] [Lj0y] [error] [TimeId=1] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 11:00:56,493 [WARNING] [Lj0y] [error] [TimeId=1] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 11:00:56,493 [WARNING] [Lj0y] [error] [TimeId=1] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 11:00:56,493 [WARNING] [Lj0y] [error] [TimeId=1] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 11:00:56,494 [WARNING] [Lj0y] [error] [TimeId=1] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 11:00:56,494 [WARNING] [Lj0y] [error] [TimeId=1] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 11:00:56,494 [WARNING] [Lj0y] [error] [TimeId=1] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 11:00:56,494 [WARNING] [Lj0y] [error] [TimeId=1] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 11:00:56,494 [WARNING] [Lj0y] [error] [TimeId=1] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 11:00:56,496 [WARNING] [Lj0y] [error] [TimeId=2] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 11:00:56,497 [WARNING] [Lj0y] [error] [TimeId=2] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 11:00:56,497 [WARNING] [Lj0y] [error] [TimeId=2] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 11:00:56,498 [WARNING] [Lj0y] [error] [TimeId=2] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 11:00:56,498 [WARNING] [Lj0y] [error] [TimeId=2] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 11:00:56,498 [WARNING] [Lj0y] [error] [TimeId=2] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 11:00:56,498 [WARNING] [Lj0y] [error] [TimeId=2] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 11:00:56,498 [WARNING] [Lj0y] [error] [TimeId=2] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 11:00:56,498 [WARNING] [Lj0y] [error] [TimeId=2] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 11:00:56,499 [WARNING] [Lj0y] [error] [TimeId=2] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 11:00:56,499 [WARNING] [Lj0y] [error] [TimeId=2] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 11:00:56,499 [WARNING] [Lj0y] [error] [TimeId=3] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 11:00:56,499 [WARNING] [Lj0y] [error] [TimeId=3] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 11:00:56,499 [WARNING] [Lj0y] [error] [TimeId=3] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 11:00:56,499 [WARNING] [Lj0y] [error] [TimeId=3] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 11:00:56,499 [WARNING] [Lj0y] [error] [TimeId=3] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 11:00:56,499 [WARNING] [Lj0y] [error] [TimeId=3] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 11:00:56,499 [WARNING] [Lj0y] [error] [TimeId=3] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 11:00:56,500 [WARNING] [Lj0y] [error] [TimeId=3] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 11:00:56,500 [WARNING] [Lj0y] [error] [TimeId=3] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 11:00:56,500 [WARNING] [Lj0y] [error] [TimeId=3] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 11:00:56,500 [WARNING] [Lj0y] [error] [TimeId=3] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 11:00:56,500 [WARNING] [Lj0y] [error] [TimeId=4] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 11:00:56,500 [WARNING] [Lj0y] [error] [TimeId=4] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 11:00:56,500 [WARNING] [Lj0y] [error] [TimeId=4] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 11:00:56,501 [WARNING] [Lj0y] [error] [TimeId=4] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 11:00:56,501 [WARNING] [Lj0y] [error] [TimeId=4] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 11:00:56,501 [WARNING] [Lj0y] [error] [TimeId=4] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 11:00:56,501 [WARNING] [Lj0y] [error] [TimeId=4] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 11:00:56,501 [WARNING] [Lj0y] [error] [TimeId=4] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 11:00:56,501 [WARNING] [Lj0y] [error] [TimeId=4] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 11:00:56,501 [WARNING] [Lj0y] [error] [TimeId=4] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 11:00:56,501 [WARNING] [Lj0y] [error] [TimeId=4] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 11:00:56,502 [WARNING] [Lj0y] [error] [TimeId=5] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 11:00:56,502 [WARNING] [Lj0y] [error] [TimeId=5] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 11:00:56,502 [WARNING] [Lj0y] [error] [TimeId=5] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 11:00:56,502 [WARNING] [Lj0y] [error] [TimeId=5] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 11:00:56,502 [WARNING] [Lj0y] [error] [TimeId=5] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 11:00:56,502 [WARNING] [Lj0y] [error] [TimeId=5] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 11:00:56,502 [WARNING] [Lj0y] [error] [TimeId=5] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 11:00:56,502 [WARNING] [Lj0y] [error] [TimeId=5] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 11:00:56,503 [WARNING] [Lj0y] [error] [TimeId=5] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 11:00:56,503 [WARNING] [Lj0y] [error] [TimeId=5] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 11:00:56,503 [WARNING] [Lj0y] [error] [TimeId=5] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 11:00:56,503 [WARNING] [Lj0y] [error] [TimeId=6] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 11:00:56,503 [WARNING] [Lj0y] [error] [TimeId=6] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 11:00:56,503 [WARNING] [Lj0y] [error] [TimeId=6] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 11:00:56,503 [WARNING] [Lj0y] [error] [TimeId=6] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 11:00:56,503 [WARNING] [Lj0y] [error] [TimeId=6] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 11:00:56,503 [WARNING] [Lj0y] [error] [TimeId=6] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 11:00:56,503 [WARNING] [Lj0y] [error] [TimeId=6] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 11:00:56,503 [WARNING] [Lj0y] [error] [TimeId=6] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 11:00:56,504 [WARNING] [Lj0y] [error] [TimeId=6] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 11:00:56,504 [WARNING] [Lj0y] [error] [TimeId=6] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 11:00:56,504 [WARNING] [Lj0y] [error] [TimeId=6] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 11:00:56,504 [WARNING] [Lj0y] [error] [TimeId=7] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 11:00:56,504 [WARNING] [Lj0y] [error] [TimeId=7] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 11:00:56,504 [WARNING] [Lj0y] [error] [TimeId=7] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 11:00:56,504 [WARNING] [Lj0y] [error] [TimeId=7] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 11:00:56,504 [WARNING] [Lj0y] [error] [TimeId=7] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 11:00:56,504 [WARNING] [Lj0y] [error] [TimeId=7] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 11:00:56,505 [WARNING] [Lj0y] [error] [TimeId=7] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 11:00:56,505 [WARNING] [Lj0y] [error] [TimeId=7] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 11:00:56,505 [WARNING] [Lj0y] [error] [TimeId=7] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 11:00:56,505 [WARNING] [Lj0y] [error] [TimeId=7] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 11:00:56,505 [WARNING] [Lj0y] [error] [TimeId=7] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 11:00:56,505 [WARNING] [Lj0y] [error] [TimeId=8] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 11:00:56,505 [WARNING] [Lj0y] [error] [TimeId=8] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 11:00:56,505 [WARNING] [Lj0y] [error] [TimeId=8] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 11:00:56,505 [WARNING] [Lj0y] [error] [TimeId=8] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 11:00:56,506 [WARNING] [Lj0y] [error] [TimeId=8] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 11:00:56,506 [WARNING] [Lj0y] [error] [TimeId=8] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 11:00:56,506 [WARNING] [Lj0y] [error] [TimeId=8] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 11:00:56,506 [WARNING] [Lj0y] [error] [TimeId=8] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 11:00:56,506 [WARNING] [Lj0y] [error] [TimeId=8] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 11:00:56,506 [WARNING] [Lj0y] [error] [TimeId=8] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 11:00:56,506 [WARNING] [Lj0y] [error] [TimeId=8] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 11:00:56,506 [WARNING] [Lj0y] [error] [TimeId=9] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 11:00:56,506 [WARNING] [Lj0y] [error] [TimeId=9] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 11:00:56,506 [WARNING] [Lj0y] [error] [TimeId=9] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 11:00:56,507 [WARNING] [Lj0y] [error] [TimeId=9] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 11:00:56,507 [WARNING] [Lj0y] [error] [TimeId=9] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 11:00:56,507 [WARNING] [Lj0y] [error] [TimeId=9] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 11:00:56,507 [WARNING] [Lj0y] [error] [TimeId=9] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 11:00:56,507 [WARNING] [Lj0y] [error] [TimeId=9] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 11:00:56,507 [WARNING] [Lj0y] [error] [TimeId=9] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 11:00:56,508 [WARNING] [Lj0y] [error] [TimeId=9] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 11:00:56,508 [WARNING] [Lj0y] [error] [TimeId=9] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 11:00:56,508 [WARNING] [Lj0y] [error] [TimeId=10] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 11:00:56,508 [WARNING] [Lj0y] [error] [TimeId=10] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 11:00:56,508 [WARNING] [Lj0y] [error] [TimeId=10] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 11:00:56,508 [WARNING] [Lj0y] [error] [TimeId=10] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 11:00:56,508 [WARNING] [Lj0y] [error] [TimeId=10] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 11:00:56,509 [WARNING] [Lj0y] [error] [TimeId=10] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 11:00:56,509 [WARNING] [Lj0y] [error] [TimeId=10] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 11:00:56,509 [WARNING] [Lj0y] [error] [TimeId=10] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 11:00:56,509 [WARNING] [Lj0y] [error] [TimeId=10] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 11:00:56,509 [WARNING] [Lj0y] [error] [TimeId=10] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 11:00:56,509 [WARNING] [Lj0y] [error] [TimeId=10] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 11:00:56,510 [WARNING] [Lj0y] [error] [TimeId=11] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 11:00:56,510 [WARNING] [Lj0y] [error] [TimeId=11] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 11:00:56,510 [WARNING] [Lj0y] [error] [TimeId=11] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 11:00:56,510 [WARNING] [Lj0y] [error] [TimeId=11] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 11:00:56,510 [WARNING] [Lj0y] [error] [TimeId=11] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 11:00:56,511 [WARNING] [Lj0y] [error] [TimeId=11] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 11:00:56,511 [WARNING] [Lj0y] [error] [TimeId=11] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 11:00:56,511 [WARNING] [Lj0y] [error] [TimeId=11] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 11:00:56,511 [WARNING] [Lj0y] [error] [TimeId=11] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 11:00:56,511 [WARNING] [Lj0y] [error] [TimeId=11] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 11:00:56,511 [WARNING] [Lj0y] [error] [TimeId=11] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 11:00:56,511 [WARNING] [Lj0y] [error] [TimeId=12] Error in 'NET_PROFIT': Unknown token 'PROFIT_BEFORE_TAX' in formula: PROFIT_BEFORE_TAX+TAX
+2026-09-02 11:00:56,511 [WARNING] [Lj0y] [error] [TimeId=12] Error in 'PROFIT_BEFORE_TAX': Unknown token 'OPERATING_PROFIT' in formula: OPERATING_PROFIT+INTEREST
+2026-09-02 11:00:56,511 [WARNING] [Lj0y] [error] [TimeId=12] Error in 'OPERATING_PROFIT': Unknown token 'EBITDA' in formula: EBITDA+DEPRECIATION_AMORTISATION
+2026-09-02 11:00:56,512 [WARNING] [Lj0y] [error] [TimeId=12] Error in 'EBITDA': Unknown token 'GROSS_PROFIT' in formula: GROSS_PROFIT+OPERATING_EXPENSE
+2026-09-02 11:00:56,512 [WARNING] [Lj0y] [error] [TimeId=12] Error in 'GROSS_PROFIT': Unknown token 'COST_OF_SALES' in formula: REVENUE+COST_OF_SALES+102
+2026-09-02 11:00:56,512 [WARNING] [Lj0y] [error] [TimeId=12] Error in 'COST_OF_SALES': Unknown token 'd1' in formula: REVENUE*d1
+2026-09-02 11:00:56,512 [WARNING] [Lj0y] [error] [TimeId=12] Error in '102': Unknown token 'd2' in formula: REVENUE*d2
+2026-09-02 11:00:56,512 [WARNING] [Lj0y] [error] [TimeId=12] Error in 'OPERATING_EXPENSE': Unknown token 'PAY' in formula: PAY+300+310+320+330+331
+2026-09-02 11:00:56,512 [WARNING] [Lj0y] [error] [TimeId=12] Error in '201': Unknown token 'd3' in formula: (200)*d3
+2026-09-02 11:00:56,512 [WARNING] [Lj0y] [error] [TimeId=12] Error in '202': Unknown token 'd4' in formula: (200+201)*d4
+2026-09-02 11:00:56,512 [WARNING] [Lj0y] [error] [TimeId=12] Error in '203': Unknown token 'd5' in formula: (200)*d5
+2026-09-02 11:01:01,118 [INFO] HTTP Request: POST https://localhost:44368/api/calculation/callback "HTTP/1.1 200 OK"
+2026-09-02 11:01:01,153 [INFO] [Lj0y] Done.
+2026-09-02 12:29:46,698 [INFO] [Lj0y] Fetching connection string...
+2026-09-02 12:29:47,698 [INFO] [Server=192.168.120.72;Database=PlannerFD_Lj0y;User ID=sa;Password=weBMaster#!@2022;TrustServerCertificate=True] Fetching master DB...
+2026-09-02 12:29:47,700 [INFO] [Lj0y] Fetching sheet data...
+2026-09-02 12:29:48,980 [INFO] Sheet data fetched: 324 rows
+2026-09-02 12:29:49,185 [INFO] Dependency edges fetched: 32
+2026-09-02 12:29:49,186 [INFO] [Lj0y] Calculating 324 rows...
+2026-09-02 12:29:49,206 [INFO] [Lj0y] Saving 0 calculated rows...
+2026-09-02 12:29:50,933 [INFO] HTTP Request: POST https://localhost:44368/api/calculation/callback "HTTP/1.1 200 OK"
+2026-09-02 12:29:50,947 [INFO] [Lj0y] Done.
+2026-09-02 13:35:19,464 [INFO] [Lj0y] Fetching connection string...
+2026-09-02 13:35:20,658 [INFO] [Server=192.168.120.72;Database=PlannerFD_Lj0y;User ID=sa;Password=weBMaster#!@2022;TrustServerCertificate=True] Fetching master DB...
+2026-09-02 13:35:20,659 [INFO] [Lj0y] Fetching sheet data...
+2026-09-02 13:35:22,098 [INFO] Sheet data fetched: 324 rows
+2026-09-02 13:35:22,314 [INFO] Dependency edges fetched: 32
+2026-09-02 13:35:22,315 [INFO] [Lj0y] Calculating 324 rows...
+2026-09-02 13:35:22,370 [INFO] [Lj0y] Saving 144 calculated rows...
+2026-09-02 13:35:38,616 [INFO] HTTP Request: POST https://localhost:44368/api/calculation/callback "HTTP/1.1 200 OK"
+2026-09-02 13:35:38,624 [INFO] [Lj0y] Done.
+2026-09-10 11:33:15,725 [INFO] [H2V4] Fetching connection string...
+2026-09-10 11:33:22,707 [INFO] [Server=192.168.120.72;Database=PlannerFD_H2V4;User ID=sa;Password=weBMaster#!@2022;TrustServerCertificate=True] Fetching master DB...
+2026-09-10 11:33:22,710 [INFO] [H2V4] Fetching sheet data...
+2026-09-10 11:33:25,926 [INFO] Sheet data fetched: 377 rows
+2026-09-10 11:33:26,624 [INFO] Dependency edges fetched: 35
+2026-09-10 11:33:26,624 [INFO] [H2V4] Calculating 377 rows...
+2026-09-10 11:33:27,484 [INFO] [H2V4] Saving 195 calculated rows...
+2026-09-10 11:33:57,896 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,898 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:33:57,899 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,899 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,899 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:33:57,900 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,900 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,900 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:33:57,901 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,901 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,901 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:33:57,901 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,901 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,901 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:33:57,902 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,902 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,902 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:33:57,902 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,902 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,908 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:33:57,913 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,914 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,914 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:33:57,914 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,914 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,914 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:33:57,915 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,915 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,915 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:33:57,915 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,915 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,915 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:33:57,915 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,916 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,916 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:33:57,916 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,916 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,916 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:33:57,916 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,916 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,916 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:33:57,916 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,917 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,917 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:33:57,917 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,917 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,917 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:33:57,917 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,917 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,917 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:33:57,918 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,918 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,918 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:33:57,918 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,918 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,919 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:33:57,919 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,919 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,919 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:33:57,919 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,920 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,920 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:33:57,922 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,923 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:57,924 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:33:57,924 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:33:59,542 [INFO] HTTP Request: POST https://localhost:44368/api/calculation/callback "HTTP/1.1 200 OK"
+2026-09-10 11:33:59,551 [INFO] [H2V4] Done.
+2026-09-10 11:55:54,283 [INFO] [H2V4] Fetching connection string...
+2026-09-10 11:55:56,184 [INFO] [Server=192.168.120.72;Database=PlannerFD_H2V4;User ID=sa;Password=weBMaster#!@2022;TrustServerCertificate=True] Fetching master DB...
+2026-09-10 11:55:56,186 [INFO] [H2V4] Fetching sheet data...
+2026-09-10 11:55:58,540 [INFO] Sheet data fetched: 377 rows
+2026-09-10 11:55:59,104 [INFO] Dependency edges fetched: 35
+2026-09-10 11:55:59,105 [INFO] [H2V4] Calculating 377 rows...
+2026-09-10 11:55:59,194 [INFO] [H2V4] Saving 195 calculated rows...
+2026-09-10 11:56:00,578 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,579 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:56:00,579 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,580 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,580 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:56:00,580 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,580 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,580 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:56:00,580 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,580 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,580 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:56:00,582 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,583 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,583 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:56:00,583 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,583 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,583 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:56:00,583 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,583 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,583 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:56:00,584 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,584 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,584 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:56:00,584 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,584 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,585 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:56:00,585 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,585 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,585 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:56:00,585 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,585 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,585 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:56:00,585 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,586 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,586 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:56:00,586 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,586 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,586 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:56:00,586 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,586 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,586 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:56:00,586 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,586 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,587 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:56:00,587 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,587 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,587 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:56:00,587 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,587 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,588 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:56:00,588 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,588 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,588 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:56:00,588 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,589 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,589 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 11:56:00,589 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,589 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:00,589 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 11:56:00,590 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 11:56:01,478 [INFO] HTTP Request: POST https://localhost:44368/api/calculation/callback "HTTP/1.1 200 OK"
+2026-09-10 11:56:01,483 [INFO] [H2V4] Done.
+2026-09-10 13:35:30,365 [INFO] [H2V4] Fetching connection string...
+2026-09-10 13:35:31,393 [INFO] [Server=192.168.120.72;Database=PlannerFD_H2V4;User ID=sa;Password=weBMaster#!@2022;TrustServerCertificate=True] Fetching master DB...
+2026-09-10 13:35:31,394 [INFO] [H2V4] Fetching sheet data...
+2026-09-10 13:35:33,286 [INFO] Sheet data fetched: 377 rows
+2026-09-10 13:35:33,665 [INFO] Dependency edges fetched: 35
+2026-09-10 13:35:33,665 [INFO] [H2V4] Calculating 377 rows...
+2026-09-10 13:35:33,827 [INFO] [H2V4] Saving 195 calculated rows...
+2026-09-10 13:35:35,055 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,057 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 13:35:35,057 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,057 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,057 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 13:35:35,057 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,057 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,058 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 13:35:35,058 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,058 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,058 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 13:35:35,058 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,058 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,058 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 13:35:35,058 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,058 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,058 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 13:35:35,059 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,059 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,059 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 13:35:35,059 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,059 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,059 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 13:35:35,059 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,060 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,060 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 13:35:35,060 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,060 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,060 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 13:35:35,060 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,061 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,061 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 13:35:35,061 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,061 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,061 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 13:35:35,061 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,061 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,061 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 13:35:35,062 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,062 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,063 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 13:35:35,063 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,063 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,063 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 13:35:35,064 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,064 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,064 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 13:35:35,064 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,064 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,064 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 13:35:35,064 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,064 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,064 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 13:35:35,064 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,065 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,065 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 13:35:35,065 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,065 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,065 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 13:35:35,065 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,065 [WARNING] [H2V4] [warning] Arithmetic error in '(TOTAL_REVENUE - MATERIAL_COST - DIRECT_LABOR) / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,065 [WARNING] [H2V4] [warning] Arithmetic error in 'TOTAL_COGS / UNITS_SOLD' () — defaulted to 0
+2026-09-10 13:35:35,065 [WARNING] [H2V4] [warning] Arithmetic error in 'GROSS_PROFIT / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,066 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,066 [WARNING] [H2V4] [warning] Arithmetic error in 'EBITDA / INTEREST_EXP' () — defaulted to 0
+2026-09-10 13:35:35,066 [WARNING] [H2V4] [warning] Arithmetic error in 'NET_INCOME / TOTAL_REVENUE * 100' () — defaulted to 0
+2026-09-10 13:35:35,844 [INFO] HTTP Request: POST https://localhost:44368/api/calculation/callback "HTTP/1.1 200 OK"
+2026-09-10 13:35:35,851 [INFO] [H2V4] Done.

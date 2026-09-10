@@ -59,7 +59,7 @@ def convert_to_pyodbc_conn_str(ado_conn_str: str) -> str:
 
     params = dict(part.strip().split("=", 1) for part in ado_conn_str.split(";") if "=" in part)
 
-    pyodbc_str = "Driver={ODBC Driver 17 for SQL Server};"
+    pyodbc_str = "Driver={ODBC Driver 18 for SQL Server};"
     pyodbc_str += f"Server={params.get('Server', '')};"
     pyodbc_str += f"Database={params.get('Database', '')};"
     pyodbc_str += f"UID={params.get('User ID', '')};"
@@ -101,18 +101,23 @@ def get_connection_string_from_master(client_code: str) -> Optional[str]:
         raise Exception(f"Master DB error: {str(e)}")
 
 
-def get_sheet_data(conn_str: str, entity_id: int, version_id: int, 
-                   year_id: int,
+def get_sheet_data(conn_str: str, entity_id: int, version_id: int,
+                   year_id: int, time_period_id: int,
                    product_id: int = None, project_id: int = None) -> list[dict]:
     """
     Fetch all SheetData rows for given filters from client DB.
+
+    Scoped by TimePeriodId, not a fixed TimeId range — a bare TimeId means a
+    different thing per template (CALENDAR/FINANCIAL top out at 12,
+    PERIODS_13 goes to 13), so the old "BETWEEN 1 AND 12" bound both silently
+    dropped period 13 and couldn't disambiguate two templates' data anyway.
     """
     try:
         conn = pyodbc.connect(conn_str)
         cursor = conn.cursor()
 
         query = """
-            SELECT 
+            SELECT
                 sd.Id,
                 sd.MetricId,
                 sd.TimeId,
@@ -128,10 +133,10 @@ def get_sheet_data(conn_str: str, entity_id: int, version_id: int,
             WHERE sd.EntityId = ?
               AND sd.VersionId = ?
               AND sd.YearId = ?
-              AND sd.TimeId BETWEEN 1 AND 12
+              AND sd.TimePeriodId = ?
         """
 
-        params = [entity_id, version_id, year_id]
+        params = [entity_id, version_id, year_id, time_period_id]
 
         if product_id is not None and product_id != 0:
             query += " AND sd.ProductId = ?"
@@ -178,7 +183,7 @@ def get_metric_dependency_edges(conn_str: str) -> list[tuple[str, str]]:
         raise Exception(f"Client DB dependency fetch error: {str(e)}")
 
 
-def save_calculated_amounts(conn_str: str, updates: list[dict], total_updates: list[dict]):
+def save_calculated_amounts(conn_str: str, updates: list[dict], total_updates: list[dict], time_period_id: int):
     """
     Save calculated Amount values back to SheetData.
     updates = [{ "id": 1, "amount": 5000.00 }, ...]
@@ -186,18 +191,27 @@ def save_calculated_amounts(conn_str: str, updates: list[dict], total_updates: l
     try:
         conn = pyodbc.connect(conn_str)
         cursor = conn.cursor()
+        # Batches all rows into a single round-trip per statement shape instead
+        # of one execute() per row (a 30-metric x 12-period sheet is 360+ rows)
+        # — the dominant cost of this function before was per-row round-trip
+        # latency, not the database work itself.
+        cursor.fast_executemany = True
 
-        for item in updates:
-            cursor.execute(
+        if updates:
+            cursor.executemany(
                 "UPDATE SheetData SET Amount = ? WHERE Id = ?",
-                item["amount"], item["id"]
+                [(item["amount"], item["id"]) for item in updates]
             )
 
-            # Save TotalAmount — update first row of each metric (TimeId=1)
-        for item in total_updates:
-            cursor.execute(
-                "UPDATE SheetData SET TotalAmount = ? WHERE MetricId = ? AND TimeId = 1",
-                item["total_amount"], item["metric_id"]
+        # Save TotalAmount — update first row of each metric (TimeId=1). That
+        # row always exists for every template (CALENDAR/FINANCIAL/PERIODS_12/13
+        # all include the real Jan/period-1 row), so this convention still
+        # holds; TimePeriodId is added so it can't touch a leftover row from a
+        # different (deleted) template sharing the same MetricId/TimeId=1.
+        if total_updates:
+            cursor.executemany(
+                "UPDATE SheetData SET TotalAmount = ? WHERE MetricId = ? AND TimeId = 1 AND TimePeriodId = ?",
+                [(item["total_amount"], item["metric_id"], time_period_id) for item in total_updates]
             )
 
         conn.commit()

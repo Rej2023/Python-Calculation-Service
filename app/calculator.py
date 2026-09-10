@@ -107,7 +107,10 @@ def is_number(token: str) -> bool:
 
 def calculate_all(rows: list[dict], dependency_edges: list[tuple[str, str]]) -> tuple[list, list, list]:
     """
-    Calculate per TimeId (1-12).
+    Calculate per TimeId. `rows` is already scoped to one TimePeriod by the
+    caller's DB query, so TimeId here just means "which period slot" — it can
+    range 1-12 (CALENDAR/FINANCIAL/PERIODS_12) or 1-13 (PERIODS_13); nothing
+    in this function assumes a fixed count.
 
     The dependency structure (which metric depends on which) is the same for
     every period — only the values differ — so the topological order is

@@ -78,6 +78,7 @@ async def run_calculation(request: CalculationRequest):
             entity_id=request.entityId,
             version_id=request.versionId,
             year_id=request.yearId,
+            time_period_id=request.timePeriodId,
             product_id=request.productId,
             project_id=request.projectId
         )
@@ -94,7 +95,7 @@ async def run_calculation(request: CalculationRequest):
         updates, total_updates, issues = calculate_all(rows, dependency_edges)
 
         logger.info(f"[{request.clientCode}] Saving {len(updates)} calculated rows...")
-        save_calculated_amounts(conn_str, updates, total_updates)
+        save_calculated_amounts(conn_str, updates, total_updates, request.timePeriodId)
 
         if issues:
             for issue in issues:
