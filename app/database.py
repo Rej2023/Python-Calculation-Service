@@ -59,7 +59,7 @@ def convert_to_pyodbc_conn_str(ado_conn_str: str) -> str:
 
     params = dict(part.strip().split("=", 1) for part in ado_conn_str.split(";") if "=" in part)
 
-    pyodbc_str = "Driver={ODBC Driver 18 for SQL Server};"
+    pyodbc_str = "Driver={ODBC Driver 17 for SQL Server};"
     pyodbc_str += f"Server={params.get('Server', '')};"
     pyodbc_str += f"Database={params.get('Database', '')};"
     pyodbc_str += f"UID={params.get('User ID', '')};"
@@ -111,6 +111,14 @@ def get_sheet_data(conn_str: str, entity_id: int, version_id: int,
     different thing per template (CALENDAR/FINANCIAL top out at 12,
     PERIODS_13 goes to 13), so the old "BETWEEN 1 AND 12" bound both silently
     dropped period 13 and couldn't disambiguate two templates' data anyway.
+
+    product_id/project_id are accepted for call-signature compatibility but
+    deliberately unused: a Driver metric can now have several product/project
+    CHILD rows (ProductId or ProjectId set) alongside its own aggregate row
+    (both null). The C# save path always sums children into that aggregate
+    row before this service ever runs, so calculation must only ever read
+    the aggregate row — reading a child row here (via an override) would
+    double-count against the already-summed parent.
     """
     try:
         conn = pyodbc.connect(conn_str)
@@ -134,17 +142,11 @@ def get_sheet_data(conn_str: str, entity_id: int, version_id: int,
               AND sd.VersionId = ?
               AND sd.YearId = ?
               AND sd.TimePeriodId = ?
+              AND sd.ProductId IS NULL
+              AND sd.ProjectId IS NULL
         """
 
         params = [entity_id, version_id, year_id, time_period_id]
-
-        if product_id is not None and product_id != 0:
-            query += " AND sd.ProductId = ?"
-            params.append(product_id)
-
-        if project_id is not None and project_id != 0:
-             query += " AND sd.ProjectId = ?"
-             params.append(project_id)
 
         cursor.execute(query, params)
         columns = [column[0] for column in cursor.description]
@@ -188,6 +190,7 @@ def save_calculated_amounts(conn_str: str, updates: list[dict], total_updates: l
     Save calculated Amount values back to SheetData.
     updates = [{ "id": 1, "amount": 5000.00 }, ...]
     """
+    from decimal import Decimal
     try:
         conn = pyodbc.connect(conn_str)
         cursor = conn.cursor()
@@ -197,10 +200,13 @@ def save_calculated_amounts(conn_str: str, updates: list[dict], total_updates: l
         # latency, not the database work itself.
         cursor.fast_executemany = True
 
+        cursor.setinputsizes([(pyodbc.SQL_DECIMAL, 38, 10), pyodbc.SQL_INTEGER])
+
         if updates:
+            cursor.setinputsizes([(pyodbc.SQL_DECIMAL, 38, 10), pyodbc.SQL_INTEGER, pyodbc.SQL_INTEGER])
             cursor.executemany(
                 "UPDATE SheetData SET Amount = ? WHERE Id = ?",
-                [(item["amount"], item["id"]) for item in updates]
+                [(Decimal(str(item["amount"])) if item["amount"] is not None else None, item["id"]) for item in updates]
             )
 
         # Save TotalAmount — update first row of each metric (TimeId=1). That
@@ -208,10 +214,19 @@ def save_calculated_amounts(conn_str: str, updates: list[dict], total_updates: l
         # all include the real Jan/period-1 row), so this convention still
         # holds; TimePeriodId is added so it can't touch a leftover row from a
         # different (deleted) template sharing the same MetricId/TimeId=1.
+        # ProductId/ProjectId IS NULL is required now too — without it, a
+        # Driver-with-children metric's product/project CHILD rows also match
+        # MetricId+TimeId=1+TimePeriodId and would all get silently overwritten
+        # with the parent's TotalAmount in the same statement.
         if total_updates:
             cursor.executemany(
-                "UPDATE SheetData SET TotalAmount = ? WHERE MetricId = ? AND TimeId = 1 AND TimePeriodId = ?",
-                [(item["total_amount"], item["metric_id"], time_period_id) for item in total_updates]
+                """
+                UPDATE SheetData 
+                SET TotalAmount = ? 
+                WHERE MetricId = ? AND TimeId = 1 AND TimePeriodId = ?
+                  AND ProductId IS NULL AND ProjectId IS NULL
+                """,
+                [(Decimal(str(item["total_amount"])) if item["total_amount"] is not None else None, item["metric_id"], time_period_id) for item in total_updates]
             )
 
         conn.commit()

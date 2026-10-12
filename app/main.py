@@ -56,7 +56,11 @@ async def run_calculation(request: CalculationRequest):
         clientCode=request.clientCode,
         entityId=request.entityId,
         versionId=request.versionId,
-        yearId=request.yearId
+        yearId=request.yearId,
+        timePeriodId=request.timePeriodId,
+        productId=request.productId,
+        projectId=request.projectId,
+        userId=request.userId
     )
 
     log_id = None

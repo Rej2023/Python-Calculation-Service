@@ -8,7 +8,23 @@ def build_dependency_graph(rows: list[dict], edges: list[tuple[str, str]]) -> li
     Topological sort using networkx.
     `edges` are (depends_on_code, metric_code) pairs already validated and
     persisted by MetricRepository (C#) at formula-save-time — no more
-    regex-deriving them here on every calculation.
+    regex-deriving them here on every calculation... in principle. In
+    practice, a metric whose MetricDependency rows were never populated
+    (seed/import data that bypassed MetricRepository's normal
+    SyncMetricDependenciesAsync path, for instance) has NO persisted edges
+    at all, so topological_sort has nothing constraining its position and
+    can place it before its own dependencies. That's harmless for a
+    metric coded with letters (resolve_formula just can't find it yet,
+    raises, and the cell is defaulted to 0 with a logged issue) but
+    silently WRONG for one coded with pure digits (e.g. "201"): evaluated
+    before it's computed, its code is indistinguishable from the literal
+    number 201, so the formula referencing it quietly uses that constant
+    instead — no error, just a wrong answer. Deriving edges additionally
+    from each CALC row's own formula text (same word-boundary substring
+    match C#'s own dependency extraction uses, immune to the same
+    ambiguity) makes the graph self-healing regardless of whether the DB
+    table is complete — it only ever adds edges that are already true per
+    the formula, so merging with the persisted ones is always safe.
     """
     graph = nx.DiGraph()
 
@@ -23,6 +39,19 @@ def build_dependency_graph(rows: list[dict], edges: list[tuple[str, str]]) -> li
     for depends_on_code, metric_code in edges:
         if depends_on_code in codes and metric_code in codes:
             graph.add_edge(depends_on_code, metric_code)
+
+    code_patterns = {
+        code: re.compile(rf'(?<![A-Z0-9_]){re.escape(code.upper())}(?![A-Z0-9_])')
+        for code in codes
+    }
+    for row in rows:
+        if row["Type"] != 2 or not row.get("Formula"):
+            continue
+        metric_code = row["MetricCode"]
+        formula_upper = row["Formula"].upper()
+        for other_code, pattern in code_patterns.items():
+            if other_code != metric_code and pattern.search(formula_upper):
+                graph.add_edge(other_code, metric_code)
 
     # Topological sort
     try:
@@ -40,7 +69,9 @@ def build_dependency_graph(rows: list[dict], edges: list[tuple[str, str]]) -> li
     return sorted_rows
 
 
-def resolve_formula(formula: str, metric_values: dict[str, float]) -> tuple[float, str | None]:
+def resolve_formula(
+    formula: str, metric_values: dict[str, float], known_codes: set[str] = frozenset()
+) -> tuple[float, str | None]:
     """
     Replace MetricCode tokens with their values and evaluate safely.
 
@@ -53,6 +84,17 @@ def resolve_formula(formula: str, metric_values: dict[str, float]) -> tuple[floa
     formula itself is valid but the arithmetic can't be done as written
     (division/modulo by zero, overflow) — callers should record it and use
     the fallback value rather than treat it as a broken formula.
+
+    `known_codes` is every metric Code (uppercase) that's actually part of
+    this calculation. A metric coded with letters (e.g. "REVENUE") that
+    hasn't been computed yet just fails the is_number check below and
+    falls through to "Unknown token" — loud and obvious. A metric coded
+    with pure digits (e.g. "201") is indistinguishable from the literal
+    number 201 once it isn't yet in metric_values, so without this check
+    it would silently fall through to "pure numeric constant" instead —
+    wrong, but no error raised. Checking known_codes BEFORE is_number
+    closes that gap: a recognized metric code that isn't computed yet is
+    always a dependency-order problem, never a legitimate literal.
     """
     # Tokenize
     tokens = re.findall(r'[A-Za-z_][A-Za-z0-9_]*|[\d.]+|[+\-*/()%]', formula)
@@ -69,6 +111,11 @@ def resolve_formula(formula: str, metric_values: dict[str, float]) -> tuple[floa
             if value is None:
                 raise ValueError(f"Metric '{token}' has no value (None). Cannot calculate.")
             resolved_tokens.append(str(value))
+        elif token_key in known_codes:
+            raise ValueError(
+                f"Metric '{token}' referenced in '{formula}' before it was calculated "
+                f"— dependency order problem, not a missing value"
+            )
         elif is_number(token):
             # Pure numeric constant → keep as is
             resolved_tokens.append(token)
@@ -136,6 +183,7 @@ def calculate_all(rows: list[dict], dependency_edges: list[tuple[str, str]]) -> 
     # Build the topological order once, from whichever period has rows.
     any_period_rows = next(iter(periods.values()))
     sorted_codes = [row["MetricCode"] for row in build_dependency_graph(any_period_rows, dependency_edges)]
+    known_codes = {code.upper() for code in sorted_codes}
 
     all_updates = []
     metric_period_results = defaultdict(list)
@@ -160,7 +208,7 @@ def calculate_all(rows: list[dict], dependency_edges: list[tuple[str, str]]) -> 
         for row in sorted_rows:
             if row["Type"] == 2 and row["Formula"]:
                 try:
-                    result, warning = resolve_formula(row["Formula"], metric_values)
+                    result, warning = resolve_formula(row["Formula"], metric_values, known_codes)
                     if warning:
                         issues.append({
                             "time_id": time_id,
