@@ -1,4 +1,5 @@
 import pyodbc
+from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 from typing import Optional
 import logging
 import threading
@@ -13,6 +14,33 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+
+
+# ── Amount values sent to SQL ────────────────────────────────────────────────
+# Saves bind amounts as DECIMAL(38,10). pyodbc refuses (does not round) a
+# Decimal with more than 10 decimal places — "Converting decimal loses
+# precision" — and a single ratio result like 0.33333333333333331 or 1.2e-15
+# failed the whole save. Round here; the columns are 18,2 anyway.
+_AMOUNT_STEP = Decimal("0.0000000001")
+_AMOUNT_MAX = Decimal("1e28")  # 38 digits - 10 decimals
+
+
+def to_sql_amount(value) -> Optional[Decimal]:
+    """float/int/Decimal/None -> Decimal with at most 10 decimals, or None.
+    NaN / infinity / values too large for DECIMAL(38,10) become None."""
+    if value is None:
+        return None
+    try:
+        d = Decimal(str(value))
+    except (InvalidOperation, ValueError, TypeError):
+        return None
+    if not d.is_finite():
+        return None
+    d = d.quantize(_AMOUNT_STEP, rounding=ROUND_HALF_UP)
+    if abs(d) >= _AMOUNT_MAX:
+        logger.warning(f"Amount {value} too large for DECIMAL(38,10) — saved as NULL")
+        return None
+    return d
 
 
 # ── Master DB: one reused connection ─────────────────────────────────────────
@@ -285,7 +313,6 @@ def save_calculated_amounts(conn_str: str, updates: list[dict], total_updates: l
     Save calculated Amount values back to SheetData.
     updates = [{ "id": 1, "amount": 5000.00 }, ...]
     """
-    from decimal import Decimal
     try:
         conn = pyodbc.connect(conn_str)
         cursor = conn.cursor()
@@ -301,7 +328,7 @@ def save_calculated_amounts(conn_str: str, updates: list[dict], total_updates: l
             cursor.setinputsizes([(pyodbc.SQL_DECIMAL, 38, 10), pyodbc.SQL_INTEGER, pyodbc.SQL_INTEGER])
             cursor.executemany(
                 "UPDATE SheetData SET Amount = ? WHERE Id = ?",
-                [(Decimal(str(item["amount"])) if item["amount"] is not None else None, item["id"]) for item in updates]
+                [(to_sql_amount(item["amount"]), item["id"]) for item in updates]
             )
 
         # Save TotalAmount — update first row of each metric (TimeId=1). That
@@ -326,7 +353,7 @@ def save_calculated_amounts(conn_str: str, updates: list[dict], total_updates: l
                   AND EntityId = ? AND VersionId = ? AND YearId = ?
                   AND ProductId IS NULL AND ProjectId IS NULL
                 """,
-                [(Decimal(str(item["total_amount"])) if item["total_amount"] is not None else None,
+                [(to_sql_amount(item["total_amount"]),
                   item["metric_id"], time_period_id, entity_id, version_id, year_id) for item in total_updates]
             )
 
@@ -390,7 +417,6 @@ def save_staging_amounts(conn_str: str, job_id: int, scope_id: int,
     half-written. Safe to re-run (a retry just overwrites the same rows with
     the same results), so the worker never has to clean up before retrying.
     """
-    from decimal import Decimal
 
     conn = pyodbc.connect(conn_str)
     try:
@@ -402,7 +428,7 @@ def save_staging_amounts(conn_str: str, job_id: int, scope_id: int,
             cursor.setinputsizes([(pyodbc.SQL_DECIMAL, 38, 10), pyodbc.SQL_INTEGER, pyodbc.SQL_INTEGER, pyodbc.SQL_INTEGER])
             cursor.executemany(
                 "UPDATE SheetDataStaging SET Amount = ? WHERE Id = ? AND JobId = ? AND ScopeId = ?",
-                [(Decimal(str(item["amount"])) if item["amount"] is not None else None,
+                [(to_sql_amount(item["amount"]),
                   item["id"], job_id, scope_id) for item in updates]
             )
 
@@ -417,7 +443,7 @@ def save_staging_amounts(conn_str: str, job_id: int, scope_id: int,
                 WHERE MetricId = ? AND JobId = ? AND ScopeId = ? AND TimeId = 1
                   AND ProductId IS NULL AND ProjectId IS NULL
                 """,
-                [(Decimal(str(item["total_amount"])) if item["total_amount"] is not None else None,
+                [(to_sql_amount(item["total_amount"]),
                   item["metric_id"], job_id, scope_id) for item in total_updates]
             )
 

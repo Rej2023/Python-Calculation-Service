@@ -1,0 +1,2 @@
+﻿# Local-only settings (CLIENT_DB_OVERRIDE_*, etc.) — never commit
+.env.local
