@@ -24,6 +24,10 @@ from app.callback import send_callback
 
 app = FastAPI(title="Calculation Service")
 
+from app.version_routes import router as version_router
+
+app.include_router(version_router)
+
 # FIX 2: Ensure the log directory exists relative to the project directory
 LOG_DIR = BASE_DIR / "logs"
 LOG_DIR.mkdir(exist_ok=True)
